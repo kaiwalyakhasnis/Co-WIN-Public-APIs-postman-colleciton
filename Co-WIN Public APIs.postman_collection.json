@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "ec61e4e6-9ba7-477d-97d9-5405bbc7c233",
+		"name": "Co-WIN Public APIs",
+		"description": "https://apisetu.gov.in/public/api/cowin\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication APIs",
+			"item": [
+				{
+					"name": "generateOTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mobile\": \"9579835788\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/auth/public/generateOTP",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"auth",
+								"public",
+								"generateOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirmOTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"otp\": \"8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92\",\n  \"txnId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/auth/public/confirmOTP",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"auth",
+								"public",
+								"confirmOTP"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Metadata APIs",
+			"item": [
+				{
+					"name": "states",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "hi_IN",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/admin/location/states",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"location",
+								"states"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "districts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "hi_IN",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/admin/location/districts/?state_id=16",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"admin",
+								"location",
+								"districts",
+								""
+							],
+							"query": [
+								{
+									"key": "state_id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment Availability APIs",
+			"item": [
+				{
+					"name": "findByPin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "hi_IN",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=411068&date=31-05-2021",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"appointment",
+								"sessions",
+								"public",
+								"findByPin"
+							],
+							"query": [
+								{
+									"key": "pincode",
+									"value": "411068"
+								},
+								{
+									"key": "date",
+									"value": "31-05-2021"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByDistrict",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "hi_IN",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=512&date=31-03-2021",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"appointment",
+								"sessions",
+								"public",
+								"findByDistrict"
+							],
+							"query": [
+								{
+									"key": "district_id",
+									"value": "512"
+								},
+								{
+									"key": "date",
+									"value": "31-03-2021"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "calendarByPin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "hi_IN",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=110001&date=31-03-2021\n",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"appointment",
+								"sessions",
+								"public",
+								"calendarByPin"
+							],
+							"query": [
+								{
+									"key": "pincode",
+									"value": "110001"
+								},
+								{
+									"key": "date",
+									"value": "31-03-2021\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "calendarByDistrict",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "hi_IN",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=512&date=31-03-2021",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"appointment",
+								"sessions",
+								"public",
+								"calendarByDistrict"
+							],
+							"query": [
+								{
+									"key": "district_id",
+									"value": "512"
+								},
+								{
+									"key": "date",
+									"value": "31-03-2021"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Certificate APIs",
+			"item": [
+				{
+					"name": "download",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/pdf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cdn-api.co-vin.in/api/v2/registration/certificate/public/download?beneficiary_reference_id=1234567890123",
+							"protocol": "https",
+							"host": [
+								"cdn-api",
+								"co-vin",
+								"in"
+							],
+							"path": [
+								"api",
+								"v2",
+								"registration",
+								"certificate",
+								"public",
+								"download"
+							],
+							"query": [
+								{
+									"key": "beneficiary_reference_id",
+									"value": "1234567890123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
